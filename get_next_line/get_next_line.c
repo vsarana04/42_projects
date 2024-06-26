@@ -6,7 +6,7 @@
 /*   By: vsarana <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 12:32:25 by vsarana           #+#    #+#             */
-/*   Updated: 2023/07/03 14:33:27 by vsarana          ###   ########.fr       */
+/*   Updated: 2024/03/28 16:29:16 by vsarana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,24 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = ft_get_next_line(str);
 	return (str);
+}
+
+#include <stdio.h>
+#include <fcntl.h>
+
+
+int main()
+{
+	int fd;
+	char *line;
+	
+
+
+	fd = open("test.txt", O_RDONLY);
+	while ((line = get_next_line(fd)) != NULL)
+	{
+		printf("%s", line);
+		free(line);
+	}
+	return (0);
 }
