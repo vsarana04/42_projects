@@ -1,0 +1,13 @@
+# executable
+irc
+ircserv
+
+# object files directory
+obj/
+
+# Hidden cache folder (from clangd)
+.cache/
+.env
+
+# Compile_command json file used by clangd
+compile_commands.json
